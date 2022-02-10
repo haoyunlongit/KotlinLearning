@@ -30,11 +30,18 @@ class LambdaLearning2 {
         method2(100)
 
         //val/var 变量名 = { 参数1 ： 类型，参数2 : 类型, ... -> 操作参数的代码 }
-        val method3 = { t1 : Int, t2: Int ->
+        val method3 = { t1 : Int, t2 : Int ->
             val t3: Int = t1 + t2 + 3
             t3
         }
         method3(10, 100)
+
+        val method4 = fun(t1: Int, t2: Int): Int {
+            return t1 + t2 + 3
+        }
+
+        method4(10, 200)
+
     }
 
 }
