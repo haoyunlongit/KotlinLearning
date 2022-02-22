@@ -81,6 +81,9 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-analytics-ktx'
 
+    //remote config
+    implementation 'com.google.firebase:firebase-config-ktx'
+
     // flurry
     implementation 'com.flurry.android:analytics:13.1.0@aar'
 
