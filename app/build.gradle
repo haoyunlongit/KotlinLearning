@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -74,6 +75,12 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     //ratrofit2 对协程的支持
     implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
+
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

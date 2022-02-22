@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "517890953500",
+    "project_id": "kotlinlearning-2dde7",
+    "storage_bucket": "kotlinlearning-2dde7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517890953500:android:a8200d8396185205aeaad9",
+        "android_client_info": {
+          "package_name": "com.example.kotlinlearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517890953500-s2pvnv50cck4d11p3e1vs3e87loma9h7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kotlinlearning",
+            "certificate_hash": "2d6e57bf578b1028202c57743ded519f60c15eb6"
+          }
+        },
+        {
+          "client_id": "517890953500-7osjaearphpajelvu5pk0jmeoaucnh3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsSP1emRdW-DRj5gGvTzmpSa1t6VFURkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517890953500-7osjaearphpajelvu5pk0jmeoaucnh3s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
