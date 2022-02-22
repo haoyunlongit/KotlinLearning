@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import androidx.collection.ArrayMap
 import com.example.kotlinlearning.coroutine.CoroutineLearningActivity
 import com.example.kotlinlearning.databinding.ActivityMainBinding
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfig
@@ -17,6 +18,7 @@ import kotlin.coroutines.EmptyCoroutineContext
 class MainActivity : AppCompatActivity() {
     private lateinit var loginBinding: ActivityMainBinding
     private lateinit var remoteConfig: FirebaseRemoteConfig
+    private val firebaseAnalytics by lazy { FirebaseAnalytics.getInstance(baseContext) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             put("hahah", "123123")
         })
 
+
         remoteConfig.fetchAndActivate()
 
         loginBinding = ActivityMainBinding.inflate(layoutInflater, null, false)
@@ -39,13 +42,17 @@ class MainActivity : AppCompatActivity() {
             GlobalScope.launch(Dispatchers.Main) {
                 val tempStr = remoteConfig.getString("hahah")
                 println("~~~~~##" + tempStr)
-//                coroutineLearning()
+                throw RuntimeException("Test Crash")
             }
         }
 
         loginBinding.textView3.setOnClickListener {
             myTestFunction()
         }
+
+        val bundle = Bundle()
+        bundle.putString(FirebaseAnalytics.Param.METHOD, "SIGN_UP")
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SIGN_UP, bundle)
     }
 
     private suspend fun coroutineLearning() {

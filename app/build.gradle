@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -83,6 +84,9 @@ dependencies {
 
     //remote config
     implementation 'com.google.firebase:firebase-config-ktx'
+
+    //crash收集
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
 
     // flurry
     implementation 'com.flurry.android:analytics:13.1.0@aar'
