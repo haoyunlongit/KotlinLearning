@@ -81,6 +81,8 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-analytics-ktx'
 
+    // flurry
+    implementation 'com.flurry.android:analytics:13.1.0@aar'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

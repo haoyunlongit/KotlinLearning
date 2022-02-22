@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private suspend fun coroutineLearning() {
-//        val tempIntent = Intent(this, CoroutineLearningActivity::class.java)
-//        startActivity(tempIntent)
+        val tempIntent = Intent(this, CoroutineLearningActivity::class.java)
+        startActivity(tempIntent)
         val temp = GlobalScope.async {
             println("~~~~~dosync")
             delay(5000)
