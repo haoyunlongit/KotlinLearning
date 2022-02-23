@@ -30,6 +30,9 @@
         </activity>
         <activity android:name=".coroutine.CoroutineLearningActivity">
         </activity>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8946499738158438~6537761686" />
     </application>
 
 </manifest>

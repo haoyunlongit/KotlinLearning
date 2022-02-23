@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import androidx.collection.ArrayMap
 import com.example.kotlinlearning.coroutine.CoroutineLearningActivity
 import com.example.kotlinlearning.databinding.ActivityMainBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.identifier.AdvertisingIdClient
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
@@ -32,17 +35,15 @@ class MainActivity : AppCompatActivity() {
             put("hahah", "123123")
         })
 
-
         remoteConfig.fetchAndActivate()
 
         loginBinding = ActivityMainBinding.inflate(layoutInflater, null, false)
         setContentView(loginBinding.root)
         loginBinding.textView.setOnClickListener {
 
-            GlobalScope.launch(Dispatchers.Main) {
-                val tempStr = remoteConfig.getString("hahah")
-                println("~~~~~##" + tempStr)
-                throw RuntimeException("Test Crash")
+            GlobalScope.launch(Dispatchers.IO) {
+                val tempStr = AdvertisingIdClient.getAdvertisingIdInfo(baseContext)
+                println("~~~~~##" + tempStr.id)
             }
         }
 
@@ -53,6 +54,13 @@ class MainActivity : AppCompatActivity() {
         val bundle = Bundle()
         bundle.putString(FirebaseAnalytics.Param.METHOD, "SIGN_UP")
         firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SIGN_UP, bundle)
+
+        MobileAds.initialize(this) {}
+
+        val adView = loginBinding.adView
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+
     }
 
     private suspend fun coroutineLearning() {
